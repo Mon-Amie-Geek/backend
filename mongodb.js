@@ -3,9 +3,9 @@ import { MongoClient, ServerApiVersion, ObjectId } from "mongodb";
 export class MongoDatabase {
     constructor() {
         // Initialising Username/Password/Server to access Cloud MongoDB
-        const password = "";
+        const password = "M01014463";
         const username = "Ameera";
-        const server = "";
+        const server = "fullstack.f6bkn1w.mongodb.net";
 
         // URI Encoding
         const encodedUsername = encodeURIComponent(username);
@@ -36,8 +36,8 @@ export class MongoDatabase {
             await this.client.connect();
             console.log("Connected to MongoDB server");
 
-            // Accessing the ________ database
-            this.database = this.client.db(" ________");
+            // Accessing the Leasrnify database
+            this.database = this.client.db("Learnify");
 
             // Accessing the Lessons and Orders collections
             this.lessonsCollection = this.database.collection("Lessons");

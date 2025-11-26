@@ -23,7 +23,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 //Use express middleware to parse JSON request bodies
 app.use(express.json());
 //Serve the /assets route  to serve static files from the assets directory
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 //Serve the /frontend GET route to retrieve all lessons from MONGODB
 app.get("/lessons", async (req, res) => 
 {
@@ -66,7 +66,7 @@ app.put("/lessons/:id", async (req, res) =>
     try 
     {
       //Get the lessonid from request parameters
-      const lesssonID = req.params.id;
+      const lessonID = req.params.id;
       //Get tutoring data from request body
       const newLesson = req.body.lesson;
       await MongoDB.updateLesson(lessonID, newLesson);
