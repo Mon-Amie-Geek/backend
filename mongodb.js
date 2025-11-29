@@ -99,7 +99,7 @@ export class MongoDatabase {
                 // Using the $or operator to search for lessons if it matches any of the search criteria
                 $or: [
                     // Case-insensitive search for subject and location
-                    { subject: { $regex: searchQuery, $options: 'i' } },
+                    { topic: { $regex: searchQuery, $options: 'i' } },
                     { location: { $regex: searchQuery, $options: 'i' } },
                     {
                         // expr allows for aggregated expressions to be used in the query

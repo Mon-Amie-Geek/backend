@@ -78,7 +78,7 @@ app.put("/lessons/:id", async (req, res) =>
       res.status(500).json({ message: "Failed to update lesson spaces" });
     }
 });
-//Serve the /search GET route to search for tutorships
+//Serve the /search GET route to search for lessons
 app.get("/search", async (req, res) => 
 {
     try
