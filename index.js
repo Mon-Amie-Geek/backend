@@ -24,6 +24,10 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 app.use(express.json());
 //Serve the /assets route  to serve static files from the assets directory
 app.use('/images', express.static(path.join(__dirname, 'images')));
+// 2. If file not found in step 1, this middleware runs
+app.use('/images', (req, res, next) => {
+    res.status(404).send("Image not found");
+});
 //Serve the /frontend GET route to retrieve all lessons from MONGODB
 app.get("/lessons", async (req, res) => 
 {
